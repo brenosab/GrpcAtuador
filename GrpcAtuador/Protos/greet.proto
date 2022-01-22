@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  rpc Ligar (MsgRequest) returns (MsgResponse);
+  rpc Desligar (MsgRequest) returns (MsgResponse);
+}
+
+message MsgResponse {
+    int32 cod = 1;
+    bool valid = 2;
+    string tipo = 3;
+    bool ligado = 4;
+}
+message MsgRequest {
+    int32 cod = 1;
+    string tipo = 2;
+}
